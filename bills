@@ -6,13 +6,6 @@ API_KEY = 'ef4eadecded34d95a83bb27a0a80fa26'
 for i in range(1, 20):
   response = urllib2.urlopen('http://openstates.org/api/v1/bills/?page=%s&page_size=10&format=json&apikey=%s' % (i, API_KEY))
 
-# def sample_function(name):
-#     print 'I am a sample function'
-#     print 'My name is %s' % name
-#     return
-
-########## YOUR CODE GOES HERE ##########
-
 def get_bills(state, subjects, session):
     # '''
     # This function should accomplish the following tasks:
@@ -25,12 +18,9 @@ def get_bills(state, subjects, session):
 
 ########## RUN FUNCTIONS HERE ##########
 
-# sample_function('Casey')
-
-# Uncomment this to run your function with the appropriate arguments, as specified above
 get_bills('mo', 'Transportation', '2015')
 
 json_object = json.load(response)
-# loads the variable "response," which is the url open method. 
+
 for result in json_object:
     print result['title']
